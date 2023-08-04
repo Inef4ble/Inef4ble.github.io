@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-image: url(https://ceicid.es/wp-content/uploads/2017/02/mesa-madera-cosas-trabajo.jpg);
+    font-family: sans-serif;
+    background-position: center;
+}
+.content{
+    width: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.content .sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+    left: 0.5rem;
+    width: 20rem;
+    height: 95vh;    
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(51,135,162,0.15);
+    transition: 0.5s ease-in-out;
+}
+/* .content .sidebar:hover{
+    width: 20rem;
+    transition: 0.3s ease-in-out;
+} */
+.content .sidebar .bloque1_sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+.content .sidebar .bloque1_sidebar .logo_img{
+    width: auto;
+    height: auto;
+}
+.content .sidebar .bloque1_sidebar .logo_img .logo{
+    width: 100%;
+    height: auto;
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general{
+    display: flex;
+    flex-direction: column;
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1{
+    font-size: 1.2rem;
+    list-style: none;
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1 .liP01{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    transition: 0.5s ease-in-out;
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1 .liP01:hover{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1 .bi-chevron-right{
+    transition: 0.5s ease-in-out;
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1 .level2{
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    visibility:hidden;
+    overflow:hidden;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1 .level2::-webkit-scrollbar {
+    display: none;
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1 .level2 li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 1.8rem;
+    width: 100%;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0);   
+}
+.content .sidebar .bloque1_sidebar .list_cate .list_general .level1 .level2 li:hover{
+    cursor: pointer;
+    background: rgba(255, 153, 0, 0.3);
+    backdrop-filter: blur(6px);
+}
+#chklevel1-empresa, #chklevel1-items, #chklevel1-logistica, #chkredimensionar{
+    display: none;
+}
+#chklevel1-empresa:checked ~ .lbl1 .A, #chklevel1-items:checked ~ .lbl2 .B, #chklevel1-logistica:checked ~ .lbl3 .C{
+    background: rgba(255, 153, 0, 0.3);
+    backdrop-filter: blur(6px);
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+#chklevel1-empresa:checked ~ .lbl1 .bi-chevron-right, #chklevel1-items:checked ~ .lbl2 .bi-chevron-right, #chklevel1-logistica:checked ~ .lbl3 .bi-chevron-right{
+    transform: rotate(90deg);
+}
+#chklevel1-empresa:checked ~ .lbl1 .sublist1, #chklevel1-items:checked ~ .lbl2 .sublist2, #chklevel1-logistica:checked ~ .lbl3 .sublist3{
+    max-height: 300px;
+    visibility: visible;
+    overflow: auto;
+}
+.content .sidebar .bloque2_sidebar{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.content .sidebar .bloque2_sidebar .redimensionar .lblredimensionar{
+    transition: 0.3s ease-in-out;
+}
+#chkredimensionar:checked ~ .lblredimensionar{
+    transform: rotateY(180deg);
+}
+.content .sidebar .redimensionar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0); 
+    transition: 0.1s ease-in-out;
+}
+.content .sidebar .redimensionar:hover{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+}
+.content .sidebar .redimensionar label span{
+    font-size: 1.5rem;
+}
+.content .sidebar .redimensionar label span:hover{
+    cursor: pointer;
+}
+.content .sidebar .emp_card{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    position: relative;
+    padding: 0.5rem;
+    width: 18rem;
+    height: 5.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0); 
+    transition: 0.1s ease-in-out;
+}
+.content .sidebar .emp_card:hover{
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+}
+.content .sidebar .emp_card .emp_img{
+    width: 50px;
+    height: 50px;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+}
+.content .sidebar .emp_card .emp_img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.content .sidebar .emp_card .emp_info{
+    font-size: 0.95rem;
+    padding-top: 0.5rem;
+}
+.content .sidebar .emp_card .emp_info .emp_email{
+    font-size: 0.75rem;
+}
+.content .sidebar .emp_card .emp_info .emp_email:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+.content .sidebar .emp_card .emp_config{
+    font-size: 1.5rem;
+}
+.content .sidebar .emp_card .emp_config:hover{
+    cursor: pointer;
+    animation: girarTuerca 1s ease 0s 1 normal forwards;
+}
+@keyframes girarTuerca {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.active {
+    width: 5rem;
+}
