@@ -7,68 +7,102 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/head.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="content">
-        <div class="sidebar" id="sidebar">
-            <div class="bloque1_sidebar">
-                <div class="logo_img">
-                    <img class="logo" src="https://www.viatel.pe/site/assets/images/logo-viatel-3-598x196.png">
-                </div>        
-                <div class="list_cate">
-                    <ul class="list_general">
-                        <input type="checkbox" name="chklevel1-empresa" id="chklevel1-empresa" onclick="acordeon(this);">
-                        <label class="lbl1 lbllevel1" for="chklevel1-empresa">
-                            <li class="level1" id="girar"><div class="liP01 A"><div class="liP02"><i class="bi bi-building"></i><span>Empresa</span></div><i class="bi bi-chevron-right"></i></div>
-                                <ul class="sublist1 level2">
-                                    <li><span>Datos Empresa</span></li>
-                                    <li><span>Trabajadores</span></li>
-                                    <li><span>Usuarios</span></li>
-                                    <li><span>Almacén</span></li>
-                                    <li><span>Cencos</span></li>
-                                </ul>
-                            </li>
-                        </label>
-                        <input type="checkbox" name="chklevel1-items" id="chklevel1-items" onclick="acordeon(this);">
-                        <label class="lbl2 lbllevel1" for="chklevel1-items">
-                            <li class="level1"><div class="liP01 B"><div class="liP02"><i class="bi bi-box-seam"></i><span>Items</span></div><i class="bi bi-chevron-right"></i></div>
-                                <ul class="sublist2 level2">
-                                    <li><span>Materiales</span></li>
-                                    <li><span>Categorias</span></li>
-                                    <li><span>Sub Categorias</span></li>
-                                </ul>
-                            </li>
-                        </label>
-                        <input type="checkbox" name="chklevel1-logistica" id="chklevel1-logistica" onclick="acordeon(this);">
-                        <label class="lbl3 lbllevel1" for="chklevel1-logistica">
-                            <li class="level1"><div class="liP01 C"><div class="liP02"><i class="bi bi-boxes"></i><span>Logistica</span></div><i class="bi bi-chevron-right"></i></div>
-                                <ul class="sublist3 level2">
-                                    <li><span>Entradas</span></li>
-                                    <li><span>Salidas</span></li>
-                                </ul>
-                            </li>
-                        </label>        
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-btn">
+                <i class="bi bi-chevron-double-left"></i>
+            </div>
+            <div class="head">
+                <div class="user-img">
+                    <img src="/assets/img/fondoUsuario.png" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="title">Web developer</p>
+                    <p class="name">John Doe</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="menu">
+                    <p class="title">Principal</p>
+                    <ul>
+                        <li class="active">
+                            <a href="#">
+                            <i class="bi bi-house"></i>
+                            <span class="text">Inicio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="bi bi-building"></i>
+                            <span class="text">Empresa</span>
+                            <i class="bi bi-chevron-right"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="#"><span class="text">Datos</span></a></li>
+                                <li><a href="#"><span class="text">Cencos</span></a></li>
+                                <li><a href="#"><span class="text">Almacén</span></a></li>
+                                <li><a href="#"><span class="text">Trabajadores</span></a></li>
+                                <li><a href="#"><span class="text">Usuarios</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="bi bi-box-seam"></i>
+                            <span class="text">Items</span>
+                            <i class="bi bi-chevron-right"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="#"><span class="text">Materiales</span></a></li>
+                                <li><a href="#"><span class="text">Categorias</span></a></li>
+                                <li><a href="#"><span class="text">SubCategorias</span></a></li>
+                                <li><a href="#"><span class="text">Marcas</span></a></li>
+                                <li><a href="#"><span class="text">Usuarios</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="bi bi-boxes"></i>
+                            <span class="text">Logistica</span>
+                            <i class="bi bi-chevron-right"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li><a href="#"><span class="text">Entradas</span></a></li>
+                                <li><a href="#"><span class="text">Salidas</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu">
+                    <p class="title">Configuración</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            <i class="bi bi-gear"></i>
+                            <span class="text">Configuración</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="bloque2_sidebar">
-                <div class="redimensionar">
-                    <input type="checkbox" name="chkredimensionar" id="chkredimensionar">
-                    <label for="chkredimensionar" class="lblredimensionar" onclick="contraer();"><span><i class="bi bi-chevron-double-left"></i></span></label>
-                </div>
-                <div class="emp_card">
-                    <div class="emp_img">
-                        <img src="https://pbs.twimg.com/media/DWXP44rW4AEATBo.jpg">
-                    </div>
-                    <div class="emp_info">
-                        <span class="emp_name">Jose Luis</span><br>
-                        <span class="emp_lastname">San Martin Barreto</span><br>
-                        <span class="emp_email">jlsanmartin@viatel.pe</span>
-                    </div>
-                    <div class="emp_config" onclick="desactivaracordeon();">
-                        <span><i class="bi bi-gear-fill"></i></span>
-                    </div>
-                </div>
+            <div class="menu">
+                <p class="title">Cuenta</p>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="bi bi-info-circle"></i>
+                        <span class="text">Ayuda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <i class="bi bi-box-arrow-in-left"></i>
+                        <span class="text">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
