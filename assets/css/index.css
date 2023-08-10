@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 10px;
+    background-image: url(https://ceicid.es/wp-content/uploads/2017/02/mesa-madera-cosas-trabajo.jpg);
+    font-family: sans-serif; 
+    background-position: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: auto;
+    min-height: 100vh;
+}
+.sidebar{
+    position: relative;
+    width: 16rem;
+    height: 90vh;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(51,135,162,0.15);
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+}
+.sidebar .head{
+    display: flex;
+    height: 75px;
+    gap: 20px;
+    border-bottom: 2px solid white;
+}
+.sidebar .head .user-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sidebar .head .user-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.sidebar .head .user-details{
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+}
+.nav{
+    flex: 1;
+}
+.menu:not(:last-child){
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+.sidebar .head .user-details .title,
+.menu .title{
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sidebar .head .user-details .name{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.menu ul li{
+    position: relative;
+    list-style: none;
+    margin-bottom: 5px;
+    transition: 0.3s ease-in-out;
+}
+.menu ul li a{
+    display: flex;
+    align-items: center;
+    color: black;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+}
+.menu ul li:hover{
+    cursor: pointer; 
+}
+.menu ul li > a:hover,
+.menu ul li.active > a{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+}
+.menu ul li .bi{
+    font-size: 20px;
+}
+.menu ul li .text{
+    flex: 1;
+}
+.menu ul li .bi-chevron-right{
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+.menu ul li.active .bi-chevron-right{
+    transform: rotate(90deg);
+}
+.menu .sub-menu{
+    display: none;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-left: 1px solid white;
+}
+.menu .sub-menu li a{
+    padding: 10px 8px;
+    font-size: 12px;
+}
+.menu-btn{
+    position: absolute;
+    right: -25px;
+    top: 3.5%;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+    z-index: -3;
+}
+.menu-btn:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    color: black;
+}
+.sidebar.active{
+    width: 100px;
+    transition: 0.3s ease-in-out;
+}
+.sidebar.active .menu-btn i{
+    transform: rotate(180deg);
+}
+.sidebar.active .user-details{
+    display: none;
+}
+.sidebar.active .menu .title{
+    text-align: center;
+}
+.sidebar.active .menu ul li .bi-chevron-right{
+    display: none;
+}
+.sidebar.active .menu > ul > li > a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar.active .menu > ul > li > a .text{
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 4px;
+    color: black;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+.sidebar.active .menu > ul > li > a .text::after{
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 20%;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: white;
+    transform: rotate(45deg);
+    transition: 0.3s ease-in-out;
+    z-index: -1;
+}
+.sidebar.active .menu > ul > li > a:hover .text{
+    left: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+.sidebar.active .menu .sub-menu{
+    position: absolute;
+    top: 0;
+    left: 55px;
+    width: 180px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
+    z-index: -2;
+}
+.contenido{
+    width: 100%;
+    height: 90vh;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(51,135,162,0.15);
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    z-index: -3;
+}
