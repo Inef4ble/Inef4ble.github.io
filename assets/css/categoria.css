@@ -21,18 +21,19 @@
 .contenido table tr .th-accion{
     width: 20%;
 }
+.contenido .listaCategoria tr:hover td{
+    background-color: #c79d4380;
+    cursor: pointer;
+}
 .contenido table tr .td-codigo{
     text-align: center;
-    background-color: rgba(199, 157, 67, 0.5);
     border-radius: 1rem;
 }
 .contenido table tr .td-descripcion{
     padding-left: 20px;
-    background-color: rgba(199, 157, 67, 0.5);
     border-radius: 1rem;
 }
 .contenido table tr .td-accion{
     text-align: center;
-    background-color: rgba(199, 157, 67, 0.5);
     border-radius: 1rem;
 }
